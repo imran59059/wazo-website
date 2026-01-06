@@ -9,7 +9,7 @@ const stats = [
     {
         value: "41%",
         label: "fewer sick days",
-        color: "text-blue-400",
+        color: "text-primary/80",
     },
     {
         value: "59%",
@@ -19,7 +19,7 @@ const stats = [
     {
         value: "200%",
         label: "higher customer loyalty",
-        color: "text-indigo-500",
+        color: "text-primary",
     },
 ];
 

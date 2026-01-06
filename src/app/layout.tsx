@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${font.className} ${font.variable}`}>
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <Navbar />
         <main>{children}</main>

@@ -40,6 +40,9 @@ import {
     User,
     Hexagon,
     Award,
+    Headphones,
+    GraduationCap,
+    ArrowLeftRight,
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -48,7 +51,7 @@ import { motion } from "framer-motion";
 const PLATFORM_MENU_DATA = {
     Engagement: {
         description: "Get real-time insights with pulse surveys.",
-        icon: <TrendingUp className="h-5 w-5 text-blue-500" />,
+        icon: <TrendingUp className="h-5 w-5 text-primary" />,
         items: [
             { name: "Survey", icon: <FileText className="h-4 w-4 text-slate-500" /> },
             { name: "Post", icon: <Megaphone className="h-4 w-4 text-slate-500" /> },
@@ -98,6 +101,76 @@ const PLATFORM_MENU_DATA = {
     },
 };
 
+const WHY_ELETIVE_MENU_DATA = {
+    items: [
+        {
+            title: "The Eletive effect",
+            description: "Eletive has a unique approach to employee engagement, developing organisations and individuals in parallel.",
+            icon: <Target className="h-6 w-6 text-slate-700" />,
+            href: "/the-eletive-effect"
+        },
+        {
+            title: "Our story",
+            description: "Founded by engineers and psychologists, Eletive combines the best of technology with behavioural science.",
+            icon: <Users className="h-6 w-6 text-slate-700" />,
+            href: "/our-story"
+        },
+        {
+            title: "Scientific foundation",
+            description: "Learn about the research behind employee engagement and the validity and reliability of the Eletive platform.",
+            icon: <FileText className="h-6 w-6 text-slate-700" />,
+            href: "/scientific-foundation"
+        }
+    ],
+    featured: {
+        title: "Increase engagement with Eletive",
+        description: "Watch our product overview and learn how Eletive can boost employee engagement and performance.",
+        buttonText: "Join webinar",
+        image: "/images/webinar-preview.jpg", // Placeholder
+        href: "/webinar"
+    }
+};
+
+const CUSTOMERS_MENU_DATA = {
+    items: [
+        {
+            title: "Customer Success",
+            description: "Get expert help building a world-class employee engagement program.",
+            icon: <Headphones className="h-6 w-6 text-white" />,
+            href: "/customer-success",
+            iconBg: "bg-primary" // Dark blue background for icons
+        },
+        {
+            title: "Eletive Academy",
+            description: "Learn how to make the most of the Eletive platform.",
+            icon: <GraduationCap className="h-6 w-6 text-white" />,
+            href: "/academy",
+            iconBg: "bg-primary"
+        },
+        {
+            title: "Change Management",
+            description: "Drive adoption of Eletive in your organisation.",
+            icon: <ArrowLeftRight className="h-6 w-6 text-white" />,
+            href: "/change-management",
+            iconBg: "bg-primary"
+        },
+        {
+            title: "Customer stories",
+            description: "Our customers share their experiences with Eletive.",
+            icon: <MessageSquare className="h-6 w-6 text-white" />,
+            href: "/customer-stories",
+            iconBg: "bg-primary"
+        }
+    ],
+    featured: {
+        title: "Eletive Certification",
+        description: "Showcase your commitment to an exceptional employee experience with Eletive's certification badges.",
+        buttonText: "Read more",
+        image: "/images/certification-badge.jpg", // Placeholder
+        href: "/certification"
+    }
+};
+
 type PlatformCategory = keyof typeof PLATFORM_MENU_DATA;
 
 export function Navbar() {
@@ -131,7 +204,7 @@ export function Navbar() {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-base font-medium text-[#1e1e4b] bg-transparent hover:bg-slate-100">
+                                <NavigationMenuTrigger className="text-base font-medium text-[#1e1e4b] bg-transparent hover:bg-slate-100 hover:cursor-pointer">
                                     Platform
                                 </NavigationMenuTrigger>
 
@@ -139,10 +212,10 @@ export function Navbar() {
                                     <motion.div
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.2, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b z-50"
+                                        transition={{ duration: 0.1, ease: "easeOut" }}
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 overflow-hidden"
                                     >
-                                        <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px]">
+                                        <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px] pl-40">
                                             {/* Left Column: Categories */}
                                             <div className="col-span-3 p-6 border-r border-slate-100">
                                                 <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
@@ -168,14 +241,14 @@ export function Navbar() {
                                                             </div>
                                                             <div className="flex-1">
                                                                 <span className="block text-sm font-semibold">{category}</span>
-                                                                {activeCategory === category && (
-                                                                    <span className="block text-xs text-slate-500 font-normal mt-0.5 animate-in fade-in slide-in-from-left-1 duration-300">
-                                                                        {PLATFORM_MENU_DATA[category].description}
-                                                                    </span>
-                                                                )}
+                                                                {/* {activeCategory === category && ( */}
+                                                                <span className="block text-xs text-slate-500 font-normal mt-0.5 animate-in fade-in slide-in-from-left-1 duration-300">
+                                                                    {PLATFORM_MENU_DATA[category].description}
+                                                                </span>
+                                                                {/* )} */}
                                                             </div>
                                                             {activeCategory === category && (
-                                                                <ArrowRight className="h-4 w-4 text-blue-500 animate-in fade-in slide-in-from-left-2" />
+                                                                <ArrowRight className="h-4 w-4 text-primary animate-in fade-in slide-in-from-left-2" />
                                                             )}
                                                         </li>
                                                     ))}
@@ -184,7 +257,7 @@ export function Navbar() {
                                                 <div className="mt-6 pt-4 border-t border-slate-200">
                                                     <Link
                                                         href="/platform"
-                                                        className="group flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline"
+                                                        className="group flex items-center text-sm font-medium text-primary hover:text-primary hover:underline"
                                                     >
                                                         <LayoutGrid className="mr-2 h-4 w-4" />
                                                         See all features
@@ -193,23 +266,22 @@ export function Navbar() {
                                             </div>
 
                                             {/* Middle Column: Dynamic Sub-items */}
-                                            <div className="col-span-6 p-8 bg-white flex flex-col justify-center">
+                                            <div className="col-span-3 p-8 bg-white flex flex-col justify-start">
                                                 <div className="animate-in fade-in zoom-in-95 duration-200" key={activeCategory}>
                                                     <h4 className="mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#1e1e4b]">
                                                         {PLATFORM_MENU_DATA[activeCategory].icon}
                                                         <span>{activeCategory} Features</span>
                                                     </h4>
-                                                    <div className="grid grid-cols-2 gap-4">
+                                                    <div className="grid grid-cols-1 gap-4">
                                                         {PLATFORM_MENU_DATA[activeCategory].items.map((item) => (
-                                                            <Link href="#" key={item.name} className="flex items-center gap-3 rounded-lg border border-slate-100 p-3 hover:border-blue-100 hover:bg-blue-50/50 transition-colors group">
+                                                            <Link href="#" key={item.name} className="flex items-center gap-3 rounded-lg border border-slate-100 p-3 hover:border-blue-100 hover:bg-primary/10/50 transition-colors group">
                                                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-100 transition-colors">
-                                                                    {/* Cloning icon to apply hover color logic if needed, currently passing simpler icons */}
                                                                     {React.cloneElement(item.icon as React.ReactElement<{ className?: string }>, {
-                                                                        className: "h-5 w-5 text-slate-500 group-hover:text-blue-600 transition-colors"
+                                                                        className: "h-5 w-5 text-slate-500 group-hover:text-primary transition-colors"
                                                                     })}
                                                                 </div>
                                                                 <div className="flex-1">
-                                                                    <span className="text-sm font-semibold text-slate-700 group-hover:text-blue-700 transition-colors">{item.name}</span>
+                                                                    <span className="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">{item.name}</span>
                                                                 </div>
                                                                 <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-blue-400 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
                                                             </Link>
@@ -218,13 +290,14 @@ export function Navbar() {
                                                 </div>
                                             </div>
 
+
                                             {/* Right Column: Featured (Static or Contextual) */}
-                                            <div className="col-span-3 bg-gradient-to-b from-slate-50 to-white p-6 border-l border-slate-100 flex flex-col justify-between">
+                                            <div className="col-span-6 bg-gradient-to-b from-slate-50 to-white p-6 border-l border-slate-100 flex flex-col justify-between">
                                                 <div>
                                                     <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                                                         Recommended
                                                     </h4>
-                                                    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                                    <div className="w-[70%] rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                                                         <div className="mb-3 h-24 w-full rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center overflow-hidden relative">
                                                             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
                                                             <Trophy className="text-white/80 h-10 w-10" />
@@ -239,9 +312,9 @@ export function Navbar() {
                                                     </div>
                                                 </div>
 
-                                                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                                                <div className="w-[70%] text-center p-4 bg-primary/10 rounded-lg">
                                                     <p className="text-xs font-medium text-blue-800 mb-2">Ready to start?</p>
-                                                    <Button className="w-full bg-[#2ecc71] hover:bg-[#27ae60] text-white">Get a Demo</Button>
+                                                    <Button className="w-full bg-primary hover:bg-primary/90 text-white">Get a Demo</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -251,29 +324,140 @@ export function Navbar() {
                             </NavigationMenuItem>
 
                             <NavigationMenuItem>
-                                <Link href="/why-eletive" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100"}>
-                                        Why Eletive?
-                                    </NavigationMenuLink>
-                                </Link>
+                                <NavigationMenuTrigger className="text-base font-medium text-[#1e1e4b] bg-transparent hover:bg-slate-100 hover:cursor-pointer">
+                                    Why Wazo?
+                                </NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.1, ease: "easeOut" }}
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top overflow-hidden"
+                                    >
+                                        <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px]">
+                                            {/* Left Column: List Items */}
+                                            <div className="col-span-7 p-10 bg-white pl-50">
+                                                <h4 className="mb-6 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                                                    WHY CHOOSE ELETIVE?
+                                                </h4>
+                                                <div className="grid grid-cols-1 gap-6">
+                                                    {WHY_ELETIVE_MENU_DATA.items.map((item) => (
+                                                        <Link href={item.href} key={item.title} className="flex gap-4 group">
+                                                            <div className="flex-shrink-0 mt-1 h-12 w-12 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-100 group-hover:bg-primary/10 group-hover:border-blue-100 transition-colors">
+                                                                {item.icon}
+                                                            </div>
+                                                            <div>
+                                                                <h5 className="text-lg font-semibold text-primary group-hover:text-primary flex items-center gap-1">
+                                                                    {item.title}
+                                                                    <span className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">›</span>
+                                                                </h5>
+                                                                <p className="mt-1 text-slate-500 max-w-xl">{item.description}</p>
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            {/* Right Column: Featured */}
+                                            <div className="col-span-5 bg-slate-50 p-10 border-l border-slate-100">
+                                                <h4 className="mb-6 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                                                    FEATURED
+                                                </h4>
+                                                <div className="w-[70%] bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                                                    <div className="h-40 bg-slate-200 w-full relative">
+                                                        {/* Placeholder for image */}
+                                                        <div className="absolute inset-0 flex items-center justify-center text-slate-400">
+                                                            [Image Placeholder]
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-6">
+                                                        <h3 className="font-bold text-lg text-[#1e1e4b] mb-2">{WHY_ELETIVE_MENU_DATA.featured.title}</h3>
+                                                        <p className="text-slate-500 mb-6 text-sm">
+                                                            {WHY_ELETIVE_MENU_DATA.featured.description}
+                                                        </p>
+                                                        <Button variant="outline" className="w-full text-primary border-blue-200 hover:bg-primary/10">
+                                                            {WHY_ELETIVE_MENU_DATA.featured.buttonText}
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/customers" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100"}>
-                                        Customers
-                                    </NavigationMenuLink>
-                                </Link>
+                                <NavigationMenuTrigger className="text-base font-medium text-[#1e1e4b] bg-transparent hover:bg-slate-100 hover:cursor-pointer">
+                                    Customers
+                                </NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.1, ease: "easeOut" }}
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top overflow-hidden"
+                                    >
+                                        <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px] pl-50">
+                                            {/* Left Column: List Items */}
+                                            <div className="col-span-7 p-10">
+                                                <h4 className="mb-6 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                                                    A PARTNER ON YOUR PEOPLE SUCCESS JOURNEY.
+                                                </h4>
+                                                <div className="grid grid-cols-1 gap-6">
+                                                    {CUSTOMERS_MENU_DATA.items.map((item) => (
+                                                        <Link href={item.href} key={item.title} className="flex gap-4 group">
+                                                            <div className={`flex-shrink-0 mt-1 h-12 w-12 flex items-center justify-center rounded-lg ${item.iconBg} transition-colors opacity-90 group-hover:opacity-100`}>
+                                                                {item.icon}
+                                                            </div>
+                                                            <div>
+                                                                <h5 className="text-lg font-semibold text-primary group-hover:text-primary flex items-center gap-1">
+                                                                    {item.title}
+                                                                    <span className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">›</span>
+                                                                </h5>
+                                                                <p className="mt-1 text-slate-500 max-w-xl">{item.description}</p>
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            {/* Right Column: Featured */}
+                                            <div className="col-span-5 bg-slate-50 p-10 border-l border-slate-100">
+                                                <h4 className="mb-6 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                                                    FEATURED
+                                                </h4>
+                                                <div className="w-[70%] bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                                                    <div className="h-40 bg-gradient-to-br from-primary to-indigo-600 w-full relative flex items-center justify-center">
+                                                        {/* Placeholder for badge */}
+                                                        <div className="bg-white p-2 rounded shadow-sm text-center">
+                                                            <span className="block text-[10px] uppercase font-bold text-slate-400">Badge</span>
+                                                            <div className="h-8 w-8 bg-primary rounded-full mx-auto mt-1"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-6">
+                                                        <h3 className="font-bold text-lg text-[#1e1e4b] mb-2">{CUSTOMERS_MENU_DATA.featured.title}</h3>
+                                                        <p className="text-slate-500 mb-6 text-sm">
+                                                            {CUSTOMERS_MENU_DATA.featured.description}
+                                                        </p>
+                                                        <Button variant="outline" className="w-full text-primary border-blue-200 hover:bg-primary/10">
+                                                            {CUSTOMERS_MENU_DATA.featured.buttonText}
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <Link href="/resources" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100"}>
-                                        Resources
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100 hover:cursor-pointer"}>
+                                        Blogs
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <Link href="/pricing" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100"}>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100 hover:cursor-pointer"}>
                                         Pricing
                                     </NavigationMenuLink>
                                 </Link>
@@ -284,14 +468,14 @@ export function Navbar() {
 
                 {/* Desktop Right Actions */}
                 <div className="hidden lg:flex items-center space-x-4">
-                    <Link href="/signin" className="flex items-center text-sm font-medium text-[#1e1e4b] hover:text-blue-600">
+                    <Link href="/signin" className="flex items-center text-sm font-medium text-[#1e1e4b] hover:text-primary">
                         <ArrowRight className="mr-2 h-4 w-4" />
                         Sign in
                     </Link>
                     <Button variant="ghost" size="icon" className="text-[#1e1e4b]">
                         <Globe className="h-5 w-5" />
                     </Button>
-                    <Button className="bg-[#2ecc71] hover:bg-[#27ae60] text-white font-semibold">
+                    <Button className="bg-primary hover:bg-primary/90 text-white font-semibold">
                         Contact sales
                     </Button>
                 </div>
