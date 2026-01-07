@@ -4,14 +4,24 @@ import { FeatureTabs } from "@/components/sections/FeatureTabs";
 import { ExpertInsights } from "@/components/sections/ExpertInsights";
 import { BottomCTA } from "@/components/sections/BottomCTA";
 
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <CultureHero />
-      <LogoStrip />
-      <FeatureTabs />
-      <ExpertInsights />
-      <BottomCTA />
+      <SectionWrapper delay={0.2}>
+        <LogoStrip />
+      </SectionWrapper>
+      <SectionWrapper>
+        <FeatureTabs />
+      </SectionWrapper>
+      <SectionWrapper>
+        <ExpertInsights />
+      </SectionWrapper>
+      <SectionWrapper>
+        <BottomCTA />
+      </SectionWrapper>
     </div>
   );
 }

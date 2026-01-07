@@ -243,7 +243,7 @@ export function Navbar() {
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.1, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top"
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top max-h-[calc(100vh-5rem)] overflow-y-auto"
                                     >
                                         <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px] pl-40">
                                             {/* Left Column: Categories */}
@@ -374,7 +374,7 @@ export function Navbar() {
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.1, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top"
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top max-h-[calc(100vh-5rem)] overflow-y-auto"
                                     >
                                         <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px]">
                                             {/* Left Column: List Items */}
@@ -436,7 +436,7 @@ export function Navbar() {
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.1, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top"
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top max-h-[calc(100vh-5rem)] overflow-y-auto"
                                     >
                                         <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px] pl-50">
                                             {/* Left Column: List Items */}

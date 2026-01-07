@@ -72,7 +72,21 @@ export function CultureHero() {
                     >
                         <div className="space-y-4">
                             <h1 className="font-serif text-5xl font-medium tracking-tight text-white sm:text-6xl xl:text-7xl">
-                                Meet <span className="text-primary/90 italic">Wazo AI</span>
+                                <motion.span
+                                    className="pr-20 italic bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary bg-[length:150%_auto]"
+                                    animate={{
+                                        backgroundPosition: ["200% center", "-200% center"],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        repeat: Infinity,
+                                        repeatDelay: 3, // "1s por por" - repeats after 1s
+                                        ease: "linear",
+                                    }}
+                                >
+                                    Meet{" "}
+                                    Wazo AI
+                                </motion.span>
                             </h1>
                             <p className="mx-auto max-w-[600px] text-lg text-slate-300 lg:mx-0 font-light">
                                 Turn insight into impact. The employee experience platform that helps you build a high-performing culture.
