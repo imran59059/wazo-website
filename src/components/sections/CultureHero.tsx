@@ -63,7 +63,8 @@ export function CultureHero() {
                     {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
                         transition={{ duration: 0.6 }}
                         // initial={{ opacity: 0, scale: 1.9 }}
                         // animate={{ opacity: 1, scale: 1 }}
