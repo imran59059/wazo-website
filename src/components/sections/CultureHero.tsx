@@ -8,25 +8,71 @@ import { ArrowRight, CheckCircle2, TrendingUp, Users } from "lucide-react";
 export function CultureHero() {
     return (
         <section className="relative w-full overflow-hidden bg-primary pt-32 pb-20 lg:pt-48 lg:pb-32">
-            {/* Background Glows */}
-            <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[128px]" />
-            <div className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-indigo-500/20 blur-[128px]" />
+            {/* Animated Background Circles - High Visibility Mode */}
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3], // Increased opacity
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-white/20 blur-3xl" // More visible white glow
+            />
+            <motion.div
+                animate={{
+                    x: [0, 50, 0],
+                    y: [0, 30, 0],
+                }}
+                transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute top-[-200] left-[-200] h-220 w-220 bg-white/10 rounded-full opacity-60" // Thicker border, higher opacity
+            />
+            <motion.div
+                animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.2, 0.4, 0.2], // Increased opacity
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2
+                }}
+                className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-indigo-400/30 blur-[80px]" // Lighter indigo for better contrast
+            />
+            <motion.div
+                animate={{
+                    rotate: 360,
+                }}
+                transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className="absolute top-20 right-20 h-40 w-40 rounded-full border-2 border-dashed border-white/40 opacity-50" // Thicker border, higher opacity
+            />
 
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
                     {/* Left Content */}
                     <motion.div
-                        // initial={{ opacity: 0, y: 20 }}
-                        // animate={{ opacity: 1, y: 0 }}
-                        // transition={{ duration: 0.6 }}
-                        initial={{ opacity: 0, scale: 1.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        // initial={{ opacity: 0, scale: 1.9 }}
+                        // animate={{ opacity: 1, scale: 1 }}
+                        // transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex flex-col justify-center space-y-8 text-center lg:text-left"
                     >
                         <div className="space-y-4">
                             <h1 className="font-serif text-5xl font-medium tracking-tight text-white sm:text-6xl xl:text-7xl">
-                                Meet <span className="text-primary italic">Wazo AI</span>
+                                Meet <span className="text-primary/90 italic">Wazo AI</span>
                             </h1>
                             <p className="mx-auto max-w-[600px] text-lg text-slate-300 lg:mx-0 font-light">
                                 Turn insight into impact. The employee experience platform that helps you build a high-performing culture.
@@ -54,7 +100,6 @@ export function CultureHero() {
 
                     {/* Right Visuals */}
                     <div className="relative mx-auto w-full max-w-[500px] lg:max-w-none h-[400px] lg:h-[500px]">
-                        {/* Main Image Pill */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -62,10 +107,20 @@ export function CultureHero() {
                             className="absolute right-0 top-10 w-[70%] h-[80%] rounded-[100px] overflow-hidden border-4 border-white/5 shadow-2xl"
                         >
                             <div className="w-full h-full bg-slate-800 relative">
-                                {/* Placeholder for a person image */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-slate-500">
-                                    [Person Image]
-                                </div>
+                                <video
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="object-cover w-full h-full"
+                                >
+                                    <source src="/videos/hero-video.mp4" type="video/mp4" />
+                                    {/* Fallback for when video is not present or loading */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-slate-500">
+                                        [Video Placeholder]
+                                    </div>
+                                </video>
+                                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" /> {/* Subtle tint overlay */}
                             </div>
                         </motion.div>
 
