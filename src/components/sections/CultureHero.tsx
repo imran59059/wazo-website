@@ -79,9 +79,9 @@ export function CultureHero() {
                                         backgroundPosition: ["200% center", "-200% center"],
                                     }}
                                     transition={{
-                                        duration: 2,
+                                        duration: 10,
                                         repeat: Infinity,
-                                        repeatDelay: 3, // "1s por por" - repeats after 1s
+                                        repeatDelay: 6, // "1s por por" - repeats after 1s
                                         ease: "linear",
                                     }}
                                 >
@@ -114,12 +114,12 @@ export function CultureHero() {
                     </motion.div>
 
                     {/* Right Visuals */}
-                    <div className="relative mx-auto w-full max-w-[500px] lg:max-w-none h-[400px] lg:h-[500px]">
+                    <div className="relative mx-auto w-full max-w-full lg:max-w-none h-[480px] lg:h-[500px]">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="absolute right-0 top-10 w-[70%] h-[80%] rounded-[100px] overflow-hidden border-4 border-white/5 shadow-2xl"
+                            className="absolute right-20 top-10 w-[70%] h-[80%] rounded-[100px] overflow-hidden border-4 border-white/5 shadow-2xl"
                         >
                             <div className="w-full h-full bg-slate-800 relative">
                                 <video
@@ -129,7 +129,7 @@ export function CultureHero() {
                                     playsInline
                                     className="object-cover w-full h-full"
                                 >
-                                    <source src="/videos/hero-video.mp4" type="video/mp4" />
+                                    <source src="/videos/hero-video-3.mp4" type="video/mp4" />
                                     {/* Fallback for when video is not present or loading */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-slate-500">
                                         [Video Placeholder]

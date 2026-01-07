@@ -373,7 +373,7 @@ export function Navbar() {
                 {/* Mobile Menu Trigger */}
                 <div className="lg:hidden">
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                        <SheetContent side="right" className="p-0 w-full sm:max-w-sm border-l h-full">
+                        <SheetContent side="right" className="p-0 gap-0 w-full sm:max-w-sm border-l">
                             <MobileMenu onClose={() => setIsOpen(false)} />
                         </SheetContent>
                         <SheetTrigger asChild>
