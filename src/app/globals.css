@@ -4,6 +4,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --font-serif: var(--font-playfair);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-jakarta);
   --font-mono: var(--font-geist-mono);

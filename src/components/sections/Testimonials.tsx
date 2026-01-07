@@ -4,7 +4,7 @@ import Image from "next/image";
 const testimonials = [
     {
         quote:
-            "We see Eletive not just as a tool, but as a partner in our ongoing journey to enhance employee engagement",
+            "We see Wazo not just as a tool, but as a partner in our ongoing journey to enhance employee engagement",
         author: "Isabell Gerber",
         role: "People & Org Dev Manager, Xella Group",
         image: "/avatars/avatar-1.png", // Placeholder path
@@ -13,7 +13,7 @@ const testimonials = [
     },
     {
         quote:
-            "With Eletive we have a modern, agile and data-driven way of working with employee engagement.",
+            "With Wazo we have a modern, agile and data-driven way of working with employee engagement.",
         author: "Christina Hagdahl",
         role: "HR Business Partner, Dole",
         image: "/avatars/avatar-2.png", // Placeholder path

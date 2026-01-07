@@ -101,30 +101,30 @@ const PLATFORM_MENU_DATA = {
     },
 };
 
-const WHY_ELETIVE_MENU_DATA = {
+const WHY_WAZO_MENU_DATA = {
     items: [
         {
-            title: "The Eletive effect",
-            description: "Eletive has a unique approach to employee engagement, developing organisations and individuals in parallel.",
+            title: "The Wazo effect",
+            description: "Wazo has a unique approach to employee engagement, developing organisations and individuals in parallel.",
             icon: <Target className="h-6 w-6 text-slate-700" />,
-            href: "/the-eletive-effect"
+            href: "/the-wazo-effect"
         },
         {
             title: "Our story",
-            description: "Founded by engineers and psychologists, Eletive combines the best of technology with behavioural science.",
+            description: "Founded by engineers and psychologists, Wazo combines the best of technology with behavioural science.",
             icon: <Users className="h-6 w-6 text-slate-700" />,
             href: "/our-story"
         },
         {
             title: "Scientific foundation",
-            description: "Learn about the research behind employee engagement and the validity and reliability of the Eletive platform.",
+            description: "Learn about the research behind employee engagement and the validity and reliability of the Wazo platform.",
             icon: <FileText className="h-6 w-6 text-slate-700" />,
             href: "/scientific-foundation"
         }
     ],
     featured: {
-        title: "Increase engagement with Eletive",
-        description: "Watch our product overview and learn how Eletive can boost employee engagement and performance.",
+        title: "Increase engagement with Wazo",
+        description: "Watch our product overview and learn how Wazo can boost employee engagement and performance.",
         buttonText: "Join webinar",
         image: "/images/webinar-preview.jpg", // Placeholder
         href: "/webinar"
@@ -141,30 +141,30 @@ const CUSTOMERS_MENU_DATA = {
             iconBg: "bg-primary" // Dark blue background for icons
         },
         {
-            title: "Eletive Academy",
-            description: "Learn how to make the most of the Eletive platform.",
+            title: "Wazo Academy",
+            description: "Learn how to make the most of the Wazo platform.",
             icon: <GraduationCap className="h-6 w-6 text-white" />,
             href: "/academy",
             iconBg: "bg-primary"
         },
         {
             title: "Change Management",
-            description: "Drive adoption of Eletive in your organisation.",
+            description: "Drive adoption of Wazo in your organisation.",
             icon: <ArrowLeftRight className="h-6 w-6 text-white" />,
             href: "/change-management",
             iconBg: "bg-primary"
         },
         {
             title: "Customer stories",
-            description: "Our customers share their experiences with Eletive.",
+            description: "Our customers share their experiences with Wazo.",
             icon: <MessageSquare className="h-6 w-6 text-white" />,
             href: "/customer-stories",
             iconBg: "bg-primary"
         }
     ],
     featured: {
-        title: "Eletive Certification",
-        description: "Showcase your commitment to an exceptional employee experience with Eletive's certification badges.",
+        title: "Wazo Certification",
+        description: "Showcase your commitment to an exceptional employee experience with Wazo's certification badges.",
         buttonText: "Read more",
         image: "/images/certification-badge.jpg", // Placeholder
         href: "/certification"
@@ -178,12 +178,12 @@ export function Navbar() {
     const [activeCategory, setActiveCategory] = React.useState<PlatformCategory>("Engagement");
 
     return (
-        <header className="sticky w-full mx-auto border bg-background/80 backdrop-blur-md shadow-sm supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-50 w-full mx-auto border bg-background/80 backdrop-blur-md shadow-sm supports-[backdrop-filter]:bg-background/60">
             <div className="px-6 flex h-20 items-center justify-between">
                 {/* Logo */}
                 <div className="mr-4 flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
-                        <span className="flex items-center text-xl font-bold text-[#1e1e4b]">
+                        <span className="flex items-center text-xl font-bold text-primary">
                             <div className="mr-2 flex h-8 w-8 items-center justify-center">
                                 <Image
                                     src="/logo/wazo-logo.png"
@@ -204,7 +204,7 @@ export function Navbar() {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-base font-medium text-[#1e1e4b] bg-transparent hover:bg-slate-100 hover:cursor-pointer">
+                                <NavigationMenuTrigger className="text-base font-medium text-primary bg-transparent hover:bg-slate-100 hover:cursor-pointer">
                                     Platform
                                 </NavigationMenuTrigger>
 
@@ -213,7 +213,7 @@ export function Navbar() {
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.1, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 overflow-hidden"
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top"
                                     >
                                         <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px] pl-40">
                                             {/* Left Column: Categories */}
@@ -229,8 +229,8 @@ export function Navbar() {
                                                             className={cn(
                                                                 "flex cursor-pointer items-center gap-3 rounded-md p-3 transition-all duration-200",
                                                                 activeCategory === category
-                                                                    ? "bg-white shadow-sm ring-1 ring-slate-200 text-[#1e1e4b]"
-                                                                    : "text-slate-600 hover:bg-slate-200/50 hover:text-[#1e1e4b]"
+                                                                    ? "bg-white shadow-sm ring-1 ring-slate-200 text-primary"
+                                                                    : "text-slate-600 hover:bg-slate-200/50 hover:text-primary"
                                                             )}
                                                         >
                                                             <div className={cn(
@@ -242,7 +242,7 @@ export function Navbar() {
                                                             <div className="flex-1">
                                                                 <span className="block text-sm font-semibold">{category}</span>
                                                                 {/* {activeCategory === category && ( */}
-                                                                <span className="block text-xs text-slate-500 font-normal mt-0.5 animate-in fade-in slide-in-from-left-1 duration-300">
+                                                                <span className="pr-1.5 block text-xs text-slate-500 font-normal mt-0.5 animate-in fade-in slide-in-from-left-1 duration-300">
                                                                     {PLATFORM_MENU_DATA[category].description}
                                                                 </span>
                                                                 {/* )} */}
@@ -302,7 +302,7 @@ export function Navbar() {
                                                             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
                                                             <Trophy className="text-white/80 h-10 w-10" />
                                                         </div>
-                                                        <h5 className="font-semibold text-[#1e1e4b]">Boost Engagement</h5>
+                                                        <h5 className="font-semibold text-primary">Boost Engagement</h5>
                                                         <p className="mt-1 text-xs text-slate-500">
                                                             Learn how 500+ companies improved their eNPS scores.
                                                         </p>
@@ -332,16 +332,16 @@ export function Navbar() {
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.1, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top overflow-hidden"
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top"
                                     >
                                         <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px]">
                                             {/* Left Column: List Items */}
                                             <div className="col-span-7 p-10 bg-white pl-50">
                                                 <h4 className="mb-6 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                                                    WHY CHOOSE ELETIVE?
+                                                    WHY CHOOSE WAZO?
                                                 </h4>
                                                 <div className="grid grid-cols-1 gap-6">
-                                                    {WHY_ELETIVE_MENU_DATA.items.map((item) => (
+                                                    {WHY_WAZO_MENU_DATA.items.map((item) => (
                                                         <Link href={item.href} key={item.title} className="flex gap-4 group">
                                                             <div className="flex-shrink-0 mt-1 h-12 w-12 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-100 group-hover:bg-primary/10 group-hover:border-blue-100 transition-colors">
                                                                 {item.icon}
@@ -371,12 +371,12 @@ export function Navbar() {
                                                         </div>
                                                     </div>
                                                     <div className="p-6">
-                                                        <h3 className="font-bold text-lg text-[#1e1e4b] mb-2">{WHY_ELETIVE_MENU_DATA.featured.title}</h3>
+                                                        <h3 className="font-bold text-lg text-[#1e1e4b] mb-2">{WHY_WAZO_MENU_DATA.featured.title}</h3>
                                                         <p className="text-slate-500 mb-6 text-sm">
-                                                            {WHY_ELETIVE_MENU_DATA.featured.description}
+                                                            {WHY_WAZO_MENU_DATA.featured.description}
                                                         </p>
                                                         <Button variant="outline" className="w-full text-primary border-blue-200 hover:bg-primary/10">
-                                                            {WHY_ELETIVE_MENU_DATA.featured.buttonText}
+                                                            {WHY_WAZO_MENU_DATA.featured.buttonText}
                                                         </Button>
                                                     </div>
                                                 </div>
@@ -394,7 +394,7 @@ export function Navbar() {
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.1, ease: "easeOut" }}
-                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top overflow-hidden"
+                                        className="fixed top-20 left-0 w-full bg-white shadow-xl border-b rounded-b-[2rem] z-50 origin-top"
                                     >
                                         <div className="container mx-auto grid grid-cols-12 gap-0 min-h-[400px] pl-50">
                                             {/* Left Column: List Items */}
@@ -486,7 +486,7 @@ export function Navbar() {
                         <SheetContent side="right">
                             <nav className="flex flex-col space-y-4 mt-8">
                                 <Link href="/platform" className="text-lg font-semibold">Platform</Link>
-                                <Link href="/why-eletive" className="text-lg font-semibold">Why Eletive?</Link>
+                                <Link href="/why-wazo" className="text-lg font-semibold">Why Wazo?</Link>
                                 <Link href="/customers" className="text-lg font-semibold">Customers</Link>
                                 <Link href="/pricing" className="text-lg font-semibold">Pricing</Link>
                             </nav>
