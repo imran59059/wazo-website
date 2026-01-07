@@ -16,9 +16,12 @@ export function CultureHero() {
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
                     {/* Left Content */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        // initial={{ opacity: 0, y: 20 }}
+                        // animate={{ opacity: 1, y: 0 }}
+                        // transition={{ duration: 0.6 }}
+                        initial={{ opacity: 0, scale: 1.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex flex-col justify-center space-y-8 text-center lg:text-left"
                     >
                         <div className="space-y-4">
@@ -33,7 +36,7 @@ export function CultureHero() {
                             <Button size="lg" className="bg-white text-[#1e1e4b] hover:bg-slate-100 font-semibold h-12 px-8 rounded-full">
                                 Book a demo
                             </Button>
-                            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white h-12 px-8 rounded-full">
+                            <Button size="lg" variant="outline" className="border-white/20 text-white bg-white/10 hover:bg-white/20 h-12 px-8 rounded-full">
                                 Explore Wazo AI
                             </Button>
                         </div>
@@ -69,8 +72,23 @@ export function CultureHero() {
                         {/* Floating Card 1 */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
+                            animate={{
+                                opacity: 1,
+                                x: 0,
+                                y: [0, -10, 0],
+                            }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.4,
+                                y: {
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    repeatType: "reverse",
+                                    ease: "easeInOut",
+                                    delay: 1
+                                }
+                            }}
+                            style={{ willChange: "transform", backfaceVisibility: "hidden" }}
                             className="absolute left-0 bottom-20 w-64 bg-white rounded-2xl p-4 shadow-xl z-10"
                         >
                             <div className="flex items-center justify-between mb-2">
@@ -84,13 +102,27 @@ export function CultureHero() {
                         {/* Floating Card 2 */}
                         <motion.div
                             initial={{ opacity: 0, y: -50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
+                            animate={{
+                                opacity: 1,
+                                y: [0, -15, 0]
+                            }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.6,
+                                y: {
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    repeatType: "reverse",
+                                    ease: "easeInOut",
+                                    delay: 0.5
+                                }
+                            }}
+                            style={{ willChange: "transform", backfaceVisibility: "hidden" }}
                             className="absolute right-10 top-0 w-48 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-xl z-20"
                         >
                             <div className="flex items-center space-x-3 mb-3">
                                 <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center">
-                                    <Users className="h-4 w-4 text-primary" />
+                                    <Users className="h-4 w-4 text-white" />
                                 </div>
                                 <div className="text-xs text-white font-medium">Team Pulse</div>
                             </div>

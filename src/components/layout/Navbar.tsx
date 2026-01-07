@@ -50,55 +50,85 @@ import { motion } from "framer-motion";
 // Platform Menu Data Configuration
 const PLATFORM_MENU_DATA = {
     Engagement: {
-        description: "Get real-time insights with pulse surveys.",
+        description: "Build a high-performing culture with data-driven insights.",
         icon: <TrendingUp className="h-5 w-5 text-primary" />,
         items: [
-            { name: "Survey", icon: <FileText className="h-4 w-4 text-slate-500" /> },
-            { name: "Post", icon: <Megaphone className="h-4 w-4 text-slate-500" /> },
-            { name: "Insights", icon: <BarChart className="h-4 w-4 text-slate-500" /> },
-            { name: "Recognition", icon: <Medal className="h-4 w-4 text-slate-500" /> },
-            { name: "Feed", icon: <Rss className="h-4 w-4 text-slate-500" /> },
+            { name: "Survey", icon: <FileText className="h-4 w-4 text-slate-500" />, href: "/engagement/survey" },
+            { name: "Post", icon: <Megaphone className="h-4 w-4 text-slate-500" />, href: "/engagement/post" },
+            { name: "Insights", icon: <BarChart className="h-4 w-4 text-slate-500" />, href: "/engagement/insights" },
+            { name: "Recognition", icon: <Medal className="h-4 w-4 text-slate-500" />, href: "/engagement/recognition" },
+            { name: "Feed", icon: <Rss className="h-4 w-4 text-slate-500" />, href: "/engagement/feed" },
         ],
+        featured: {
+            title: "Engagement",
+            description: "Measure what matters. Improve employee engagement with real-time feedback.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+            href: "/engagement"
+        }
     },
     Voice: {
         description: "Empower your employees to speak up safely.",
-        icon: <MessageCircle className="h-5 w-5 text-indigo-500" />,
+        icon: <MessageCircle className="h-5 w-5 text-primary" />,
         items: [
-            { name: "Whistle Blow", icon: <AlertTriangle className="h-4 w-4 text-slate-500" /> },
-            { name: "Pulse", icon: <Activity className="h-4 w-4 text-slate-500" /> },
-            { name: "Chat", icon: <MessageSquare className="h-4 w-4 text-slate-500" /> },
-            { name: "Feedback", icon: <MessageCircle className="h-4 w-4 text-slate-500" /> },
+            { name: "Whistleblow", icon: <AlertTriangle className="h-4 w-4 text-slate-500" />, href: "/voice/whistleblow" },
+            { name: "Pulse", icon: <Activity className="h-4 w-4 text-slate-500" />, href: "/voice/pulse" },
+            { name: "Chat", icon: <MessageSquare className="h-4 w-4 text-slate-500" />, href: "/voice/chat" },
+            { name: "Feedback", icon: <MessageCircle className="h-4 w-4 text-slate-500" />, href: "/voice/feedback" },
         ],
+        featured: {
+            title: "Voice",
+            description: "A safe space for every voice. Anonymous reporting and open dialogue.",
+            image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80",
+            href: "/voice"
+        }
     },
     Growth: {
-        description: "Align around goals and support personal growth.",
-        icon: <Zap className="h-5 w-5 text-yellow-500" />,
+        description: "Develop your people and future-proof your organization.",
+        icon: <Zap className="h-5 w-5 text-primary" />,
         items: [
-            { name: "1:1", icon: <Users className="h-4 w-4 text-slate-500" /> },
-            { name: "360", icon: <RefreshCcw className="h-4 w-4 text-slate-500" /> },
-            { name: "Feedback", icon: <MessageSquare className="h-4 w-4 text-slate-500" /> },
+            { name: "1:1", icon: <Users className="h-4 w-4 text-slate-500" />, href: "/growth/one-on-one" },
+            { name: "360", icon: <RefreshCcw className="h-4 w-4 text-slate-500" />, href: "/growth/360" },
+            { name: "Feedback", icon: <MessageSquare className="h-4 w-4 text-slate-500" />, href: "/growth/feedback" },
         ],
+        featured: {
+            title: "Growth",
+            description: "Continuous development. Turn feedback into actionable growth plans.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+            href: "/growth"
+        }
     },
     Performance: {
-        description: "Track progress and optimize performance.",
-        icon: <Target className="h-5 w-5 text-red-500" />,
+        description: "Align individual goals with company strategy.",
+        icon: <Target className="h-5 w-5 text-primary" />,
         items: [
-            { name: "Goal", icon: <Target className="h-4 w-4 text-slate-500" /> },
-            { name: "Task", icon: <CheckSquare className="h-4 w-4 text-slate-500" /> },
-            { name: "Manager Hub", icon: <Briefcase className="h-4 w-4 text-slate-500" /> },
-            { name: "Reports", icon: <FileBarChart className="h-4 w-4 text-slate-500" /> },
+            { name: "Goals", icon: <CheckSquare className="h-4 w-4 text-slate-500" />, href: "/performance/goals" },
+            { name: "Tasks", icon: <Briefcase className="h-4 w-4 text-slate-500" />, href: "/performance/tasks" },
+            { name: "Manager Hub", icon: <LayoutGrid className="h-4 w-4 text-slate-500" />, href: "/performance/manager-hub" },
+            { name: "Reports", icon: <FileBarChart className="h-4 w-4 text-slate-500" />, href: "/performance/reports" },
         ],
+        featured: {
+            title: "Performance",
+            description: "High performance, simplified. Clear goals, continuous tracking.",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            href: "/performance"
+        }
     },
     Achievement: {
-        description: "Celebrate wins and build a culture of appreciation.",
-        icon: <Trophy className="h-5 w-5 text-amber-500" />,
+        description: "Celebrate success and recognize great work.",
+        icon: <Trophy className="h-5 w-5 text-primary" />,
         items: [
-            { name: "Award", icon: <Award className="h-4 w-4 text-slate-500" /> },
-            { name: "Profile", icon: <User className="h-4 w-4 text-slate-500" /> },
-            { name: "Forte", icon: <Hexagon className="h-4 w-4 text-slate-500" /> },
-            { name: "Badges", icon: <Medal className="h-4 w-4 text-slate-500" /> },
+            { name: "Awards", icon: <Medal className="h-4 w-4 text-slate-500" />, href: "/achievement/awards" },
+            { name: "Profile", icon: <User className="h-4 w-4 text-slate-500" />, href: "/achievement/profile" },
+            { name: "Forte", icon: <Hexagon className="h-4 w-4 text-slate-500" />, href: "/achievement/forte" },
+            { name: "Badges", icon: <Award className="h-4 w-4 text-slate-500" />, href: "/achievement/badges" },
         ],
-    },
+        featured: {
+            title: "Achievement",
+            description: "Recognize excellence. build a culture of appreciation.",
+            image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=800&q=80",
+            href: "/achievement"
+        }
+    }
 };
 
 const WHY_WAZO_MENU_DATA = {
@@ -255,36 +285,40 @@ export function Navbar() {
                                                 </ul>
 
                                                 <div className="mt-6 pt-4 border-t border-slate-200">
-                                                    <Link
-                                                        href="/platform"
-                                                        className="group flex items-center text-sm font-medium text-primary hover:text-primary hover:underline"
-                                                    >
-                                                        <LayoutGrid className="mr-2 h-4 w-4" />
-                                                        See all features
-                                                    </Link>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link
+                                                            href="/platform"
+                                                            className="group flex items-center text-sm font-medium text-primary hover:text-primary hover:underline"
+                                                        >
+                                                            <LayoutGrid className="mr-2 h-4 w-4" />
+                                                            See all features
+                                                        </Link>
+                                                    </NavigationMenuLink>
                                                 </div>
                                             </div>
 
                                             {/* Middle Column: Dynamic Sub-items */}
                                             <div className="col-span-3 p-8 bg-white flex flex-col justify-start">
                                                 <div className="animate-in fade-in zoom-in-95 duration-200" key={activeCategory}>
-                                                    <h4 className="mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#1e1e4b]">
+                                                    <h4 className="mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">
                                                         {PLATFORM_MENU_DATA[activeCategory].icon}
                                                         <span>{activeCategory} Features</span>
                                                     </h4>
                                                     <div className="grid grid-cols-1 gap-4">
                                                         {PLATFORM_MENU_DATA[activeCategory].items.map((item) => (
-                                                            <Link href="#" key={item.name} className="flex items-center gap-3 rounded-lg border border-slate-100 p-3 hover:border-blue-100 hover:bg-primary/10/50 transition-colors group">
-                                                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-100 transition-colors">
-                                                                    {React.cloneElement(item.icon as React.ReactElement<{ className?: string }>, {
-                                                                        className: "h-5 w-5 text-slate-500 group-hover:text-primary transition-colors"
-                                                                    })}
-                                                                </div>
-                                                                <div className="flex-1">
-                                                                    <span className="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">{item.name}</span>
-                                                                </div>
-                                                                <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-blue-400 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                                                            </Link>
+                                                            <NavigationMenuLink asChild key={item.name}>
+                                                                <Link href={item.href || "#"} className="flex flex-row items-center gap-3 rounded-lg border border-slate-100 p-3 hover:border-blue-100 hover:bg-primary/10 transition-colors group">
+                                                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-100 transition-colors">
+                                                                        {React.cloneElement(item.icon as React.ReactElement<{ className?: string }>, {
+                                                                            className: "h-5 w-5 text-slate-500 group-hover:text-primary transition-colors"
+                                                                        })}
+                                                                    </div>
+                                                                    <div className="flex-1">
+                                                                        <span className="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">{item.name}</span>
+                                                                    </div>
+                                                                    <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-blue-400 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                                                                </Link>
+                                                            </NavigationMenuLink>
                                                         ))}
                                                     </div>
                                                 </div>
@@ -293,28 +327,36 @@ export function Navbar() {
 
                                             {/* Right Column: Featured (Static or Contextual) */}
                                             <div className="col-span-6 bg-gradient-to-b from-slate-50 to-white p-6 border-l border-slate-100 flex flex-col justify-between">
-                                                <div>
+                                                <div className="animate-in fade-in slide-in-from-right-2 duration-300" key={activeCategory + "-featured"}>
                                                     <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                                                         Recommended
                                                     </h4>
-                                                    <div className="w-[70%] rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                                                        <div className="mb-3 h-24 w-full rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center overflow-hidden relative">
-                                                            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-                                                            <Trophy className="text-white/80 h-10 w-10" />
+                                                    <div className="w-[85%] rounded-xl border border-slate-200 bg-white p-4 shadow-sm group hover:shadow-md transition-all">
+                                                        <div className="mb-3 h-32 w-full rounded-lg bg-slate-200 overflow-hidden relative">
+                                                            <Image
+                                                                src={PLATFORM_MENU_DATA[activeCategory].featured.image}
+                                                                alt={PLATFORM_MENU_DATA[activeCategory].featured.title}
+                                                                fill
+                                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                            />
                                                         </div>
-                                                        <h5 className="font-semibold text-primary">Boost Engagement</h5>
-                                                        <p className="mt-1 text-xs text-slate-500">
-                                                            Learn how 500+ companies improved their eNPS scores.
+                                                        <h5 className="font-semibold text-primary">{PLATFORM_MENU_DATA[activeCategory].featured.title}</h5>
+                                                        <p className="mt-1 text-xs text-slate-500 line-clamp-2">
+                                                            {PLATFORM_MENU_DATA[activeCategory].featured.description}
                                                         </p>
-                                                        <Button size="sm" variant="secondary" className="mt-3 w-full text-xs">
-                                                            Read Case Study
-                                                        </Button>
+                                                        <NavigationMenuLink asChild>
+                                                            <Link href={PLATFORM_MENU_DATA[activeCategory].featured.href} className="inline-block mt-3 w-full">
+                                                                <Button size="sm" variant="secondary" className="w-full text-xs">
+                                                                    Explore {activeCategory}
+                                                                </Button>
+                                                            </Link>
+                                                        </NavigationMenuLink>
                                                     </div>
                                                 </div>
 
-                                                <div className="w-[70%] text-center p-4 bg-primary/10 rounded-lg">
-                                                    <p className="text-xs font-medium text-blue-800 mb-2">Ready to start?</p>
-                                                    <Button className="w-full bg-primary hover:bg-primary/90 text-white">Get a Demo</Button>
+                                                <div className="w-[85%] text-center p-4 bg-primary/5 rounded-lg border border-primary/10 mt-4">
+                                                    <p className="text-xs font-medium text-primary mb-2">Ready to transform your culture?</p>
+                                                    <Button className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">Get a Demo</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -434,7 +476,7 @@ export function Navbar() {
                                                         </div>
                                                     </div>
                                                     <div className="p-6">
-                                                        <h3 className="font-bold text-lg text-[#1e1e4b] mb-2">{CUSTOMERS_MENU_DATA.featured.title}</h3>
+                                                        <h3 className="font-bold text-lg text-primary mb-2">{CUSTOMERS_MENU_DATA.featured.title}</h3>
                                                         <p className="text-slate-500 mb-6 text-sm">
                                                             {CUSTOMERS_MENU_DATA.featured.description}
                                                         </p>
@@ -449,18 +491,18 @@ export function Navbar() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/resources" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100 hover:cursor-pointer"}>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/resources" className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100 hover:cursor-pointer"}>
                                         Blogs
-                                    </NavigationMenuLink>
-                                </Link>
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/pricing" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100 hover:cursor-pointer"}>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/pricing" className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-slate-100 hover:cursor-pointer"}>
                                         Pricing
-                                    </NavigationMenuLink>
-                                </Link>
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>

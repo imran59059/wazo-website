@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
